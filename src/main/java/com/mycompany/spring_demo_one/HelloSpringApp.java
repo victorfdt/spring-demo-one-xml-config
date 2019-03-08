@@ -13,28 +13,28 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class HelloSpringApp {
 
-    public static void main(String args[]) {
+	public static void main(String args[]) {
 
-        //Load de Spring configuration file
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		// Load de Spring configuration file
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 
-        //Retrive the bean from the container
-        Coach theCoach = context.getBean("myCoach", Coach.class);
-        Coach theOtherCoach = context.getBean("myOtherCoach", Coach.class);
-        
-        BaseballCoach theBaseballCoach = context.getBean("myCoach", BaseballCoach.class);
-        
-        //Call methods on the bean
-        System.out.println(theCoach.getDailyWorkout());
-        System.out.println(theOtherCoach.getDailyWorkout());
-        
-        //Fortune
-        //I can use the getFortune because the Spring container injected it for me.
-        System.out.println("Fortune: " + theBaseballCoach.getFortune());
-        
-        //Close the contex
-        context.close();
+		// Retrive the bean from the container
+		Coach theCoach = context.getBean("myCoach", Coach.class);
+		Coach theOtherCoach = context.getBean("myOtherCoach", Coach.class);
 
-    }
+		Coach theBaseballCoach = context.getBean("myCoach", Coach.class);
+
+		// Call methods on the bean
+		System.out.println(theCoach.getDailyWorkout());
+		System.out.println(theOtherCoach.getDailyWorkout());
+
+		// Fortune
+		// I can use the getFortune because the Spring container injected it for me.
+		System.out.println("Fortune: " + theBaseballCoach.getDailyFortune());
+
+		// Close the contex
+		context.close();
+
+	}
 
 }

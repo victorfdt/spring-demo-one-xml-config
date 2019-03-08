@@ -11,24 +11,27 @@ package com.mycompany.spring_demo_one;
  */
 public class BaseballCoach implements Coach {
 
-    private FortuneService fortuneService;
+	private FortuneService fortuneService;
 
-    public BaseballCoach() {};
+	public BaseballCoach() {
+	};
 
-    /**
-     * In the configuration file I'm injection the class HappyFortuneService
-     * @param service 
-     */
-    public BaseballCoach(FortuneService service) {
-        this.fortuneService = service;
-    }
-    
-    public String getFortune(){
-        return this.fortuneService.getFortune();
-    }
+	/**
+	 * In the configuration file I'm injection the class HappyFortuneService
+	 * 
+	 * @param service
+	 */
+	public BaseballCoach(FortuneService service) {
+		this.fortuneService = service;
+	}
 
-    @Override
-    public String getDailyWorkout() {
-        return "Spend 30 min running";
-    }
+	@Override
+	public String getDailyWorkout() {
+		return "Spend 30 min running";
+	}
+
+	@Override
+	public String getDailyFortune() {
+		return this.fortuneService.getFortune();
+	}
 }

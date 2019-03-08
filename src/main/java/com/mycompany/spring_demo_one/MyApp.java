@@ -10,13 +10,13 @@ package com.mycompany.spring_demo_one;
  * @author victorfdt
  */
 public class MyApp {
-    
-    public static void main(String[] args) {
-        
-        Coach coach = new BaseballCoach();
-        
-        System.out.println(coach.getDailyWorkout());
-        
-    }
-    
+
+	public static void main(String[] args) {
+
+		Coach coach = new BaseballCoach();
+
+		System.out.println(coach.getDailyWorkout());
+
+	}
+
 }
