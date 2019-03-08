@@ -30,7 +30,8 @@ public class HelloSpringApp {
 
 		// Fortune
 		// I can use the getFortune because the Spring container injected it for me.
-		System.out.println("Fortune: " + theBaseballCoach.getDailyFortune());
+		System.out.println("Fortune theBaseballCoach: " + theBaseballCoach.getDailyFortune());
+		System.out.println("Fortune theOtherCoach: " + theOtherCoach.getDailyFortune());
 
 		// Close the contex
 		context.close();
