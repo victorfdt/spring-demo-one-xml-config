@@ -11,6 +11,22 @@ package com.mycompany.spring_demo_one;
  */
 public class BaseballCoach implements Coach {
 
+    private FortuneService fortuneService;
+
+    public BaseballCoach() {};
+
+    /**
+     * In the configuration file I'm injection the class HappyFortuneService
+     * @param service 
+     */
+    public BaseballCoach(FortuneService service) {
+        this.fortuneService = service;
+    }
+    
+    public String getFortune(){
+        return this.fortuneService.getFortune();
+    }
+
     @Override
     public String getDailyWorkout() {
         return "Spend 30 min running";

@@ -22,10 +22,15 @@ public class HelloSpringApp {
         Coach theCoach = context.getBean("myCoach", Coach.class);
         Coach theOtherCoach = context.getBean("myOtherCoach", Coach.class);
         
+        BaseballCoach theBaseballCoach = context.getBean("myCoach", BaseballCoach.class);
         
         //Call methods on the bean
         System.out.println(theCoach.getDailyWorkout());
         System.out.println(theOtherCoach.getDailyWorkout());
+        
+        //Fortune
+        //I can use the getFortune because the Spring container injected it for me.
+        System.out.println("Fortune: " + theBaseballCoach.getFortune());
         
         //Close the contex
         context.close();
