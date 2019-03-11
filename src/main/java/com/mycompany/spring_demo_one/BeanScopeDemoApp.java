@@ -25,6 +25,8 @@ public class BeanScopeDemoApp {
         // check if they are pointing to the same area in memory
         if(theCoach == alphaCoach){
             System.out.println("They have the same reference");
+        } else {
+            System.out.println("They have different references");
         }
         
         System.out.println("Memory address for theCoach: " + theCoach);

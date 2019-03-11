@@ -12,8 +12,10 @@
           class="com.mycompany.spring_demo_one.HappyFortuneService">
     </bean>
 
+    <!-- the prototype scope returns a new object on each new request -->
     <bean id="myCoach"
-          class="com.mycompany.spring_demo_one.TrackCoach">
+          class="com.mycompany.spring_demo_one.TrackCoach"
+          scope="prototype">
         <constructor-arg ref="myFortuneService" />
     </bean>
 
