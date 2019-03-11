@@ -12,15 +12,29 @@ package com.mycompany.spring_demo_one;
 public class CricketCoach implements Coach {
 
     private FortuneService fortuneService;
+    private String emailAddress;
+    private String team;
 
     public CricketCoach() {
         System.out.println("CricketCoach - inside no-arg constructor.");
     }
 
-    //The setter method for injections
-    public void setFortuneService(FortuneService fortuneService) {
-        System.out.println("CricketCoach - inside the setFortuneService method.");
-        this.fortuneService = fortuneService;
+    public String getEmailAddress() {
+        return emailAddress;
+    }
+
+    public void setEmailAddress(String emailAddress) {
+        System.out.println("CricketCoach - Injecting the EmailAddress value: " + emailAddress);
+        this.emailAddress = emailAddress;
+    }
+
+    public String getTeam() {
+        return team;
+    }
+
+    public void setTeam(String team) {
+        System.out.println("CricketCoach - Injecting the team value: " + team);
+        this.team = team;
     }
 
     @Override
@@ -31,6 +45,12 @@ public class CricketCoach implements Coach {
     @Override
     public String getDailyFortune() {
         return this.fortuneService.getFortune();
+    }
+
+    //The setter method for injections
+    public void setFortuneService(FortuneService fortuneService) {
+        System.out.println("CricketCoach - inside the setFortuneService method.");
+        this.fortuneService = fortuneService;
     }
 
 }
