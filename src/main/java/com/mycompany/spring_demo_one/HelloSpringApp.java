@@ -22,7 +22,8 @@ public class HelloSpringApp {
 		Coach theCoach = context.getBean("myCoach", Coach.class);
 		Coach theOtherCoach = context.getBean("myOtherCoach", Coach.class);
 
-		Coach theBaseballCoach = context.getBean("myCoach", Coach.class);
+		Coach theBaseballCoach = context.getBean("myCoach", Coach.class);                
+                Coach theCricketCoach = context.getBean("myCricketCoach", Coach.class);
 
 		// Call methods on the bean
 		System.out.println(theCoach.getDailyWorkout());
@@ -32,6 +33,7 @@ public class HelloSpringApp {
 		// I can use the getFortune because the Spring container injected it for me.
 		System.out.println("Fortune theBaseballCoach: " + theBaseballCoach.getDailyFortune());
 		System.out.println("Fortune theOtherCoach: " + theOtherCoach.getDailyFortune());
+                System.out.println("Fortune theCricketCoach: " + theCricketCoach.getDailyFortune());
 
 		// Close the contex
 		context.close();
