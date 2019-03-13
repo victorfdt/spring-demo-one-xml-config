@@ -11,19 +11,29 @@ package com.mycompany.spring_demo_one;
  */
 public class TrackCoach implements Coach {
 
-	private FortuneService fortuneService;
+    private FortuneService fortuneService;
 
-	public TrackCoach(FortuneService service) {
-		this.fortuneService = service;
-	}
+    public TrackCoach(FortuneService service) {
+        this.fortuneService = service;
+    }
 
-	@Override
-	public String getDailyWorkout() {
-		return "Run a hard 5km.";
-	}
+    @Override
+    public String getDailyWorkout() {
+        return "Run a hard 5km.";
+    }
 
-	@Override
-	public String getDailyFortune() {
-		return this.fortuneService.getFortune();
-	}
+    @Override
+    public String getDailyFortune() {
+        return this.fortuneService.getFortune();
+    }
+
+    // add an init method
+    public void doMyStartupStuff() {
+        System.out.println("TrackCoach: inside method doMyStartupStuff");
+    }
+
+    // add a destroy method
+    public void doMyCleanupStuff(){
+        System.out.println("TrackCoach: inside method doMyCleanupStuff");
+    }
 }
